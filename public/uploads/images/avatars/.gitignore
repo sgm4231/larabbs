@@ -1,2 +1,39 @@
 *
 !.gitignore
+
+
+/**
+         * 根据用户标签获取资讯列表
+         */
+        $api->get('/news/userTagFindNews', API2\NewsController::class.'@userTagFindNews');
+
+
+
+
+
+
+        /**
+     * 根据用户标签获取资讯列表
+     * @param Request $request
+     */
+    public function userTagFindNews(Request $request)
+    {
+        //获取用户标签ID
+        $tags_id=$request->user()->tags()->pluck('tag_id')->toArray();
+
+        $limit = $request->get('limit', 15); //每页显示数
+        $offset = $request->get('offset', 0); //起步值
+
+        $news_id = Taggable::whereIn('tag_id', $tags_id)
+            ->where('taggable_type', 'news')
+            ->pluck('taggable_id')->toArray();
+
+        $news = News::whereIn('id', $news_id)
+            ->orderBy('created_at', 'desc')
+            ->offset($offset)
+            ->limit($limit)
+            ->get();
+
+        return response()->json($news, 200);
+
+    }
