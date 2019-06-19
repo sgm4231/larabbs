@@ -47,3 +47,6 @@ Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit'
 //处理 edit 页面提交的更改
 //Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
