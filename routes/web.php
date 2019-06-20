@@ -60,3 +60,6 @@ Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show
 
 //只需要 store 和 destroy 的路由
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+
+//通知列表
+Route::resource('notifications', 'NotificationsController', ['only' => ['index']]);

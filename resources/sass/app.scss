@@ -1,12 +1,9 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
 // Fontawesome
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
@@ -75,11 +72,10 @@ body {
   }
 }
 
-
 /* Topic Index Page */
 .topics-index-page, .categories-show-page {
   .topic-list {
-    .nav>li>a {
+    .nav > li > a {
       position: relative;
       display: block;
       padding: 5px 14px;
@@ -118,7 +114,7 @@ body {
 }
 
 .simditor-body img {
-  max-width:100%;
+  max-width: 100%;
 }
 
 /* Topic Show Page */
@@ -139,7 +135,6 @@ body {
 }
 
 /* 回复列表 */
-
 .topic-reply {
   a {
     color: inherit;
@@ -148,5 +143,21 @@ body {
   .meta {
     font-size: .9em;
     color: #b3b3b3;
+  }
+}
+
+/* 消息通知 */
+.notification-badge {
+  .badge {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  .badge-secondary {
+    background-color: #EBE8E8;
+  }
+
+  .badge-hint {
+    background-color: #d15b47 !important;
   }
 }
